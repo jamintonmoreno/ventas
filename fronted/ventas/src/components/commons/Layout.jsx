@@ -4,7 +4,7 @@ import React from 'react'
 import Headerco from './Headerco';
 import Menu from './Menu';
 
-const Layout = () => {
+const Layout = (props) => {
     return ( 
         <div>
             <Headerco />
@@ -15,7 +15,7 @@ const Layout = () => {
                         <Menu />        
                     </div>
                     <div className="column">
-                       <p> Este es el contenido</p>
+                       {props.children}
                     </div>
                 </div>
             </div>

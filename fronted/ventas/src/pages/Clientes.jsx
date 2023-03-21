@@ -1,4 +1,5 @@
 import React from "react";
+import CreateCliente from "../components/clientes/CreateCliente";
 import TableCliente from "../components/clientes/TableCliente";
 import Layout from "../components/commons/Layout";
 
@@ -8,14 +9,7 @@ const Clientes = () => {
       <div className="panel">
         <div className="panel-header">Clientes</div>
         <div className="box">
-          <div className="container">
-            <button className="button is-small is-primary">
-              <span className="icon is-small">
-                <i className="fas fa-plus"></i>
-              </span>
-              <span>Registrar nuevo</span>
-            </button>
-          </div>
+          <CreateCliente />
           <TableCliente />
         </div>
       </div>

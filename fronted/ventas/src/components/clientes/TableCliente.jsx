@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import RowCliente from "./RowCliente";
 
 const TableCliente = () => {
+  const [clientesList, setClientesList] = useState([
+    {
+        "idCliente": "1",
+        "nombres":"Jaminton",
+        "apellidos":"Moreno",
+        "direccion":"Av. Lincon",
+        "telefono": "+654789",
+        "email":"jmoren@gmail.com"
+    },
+    {
+        "idCliente": "2",
+        "nombres":"Jaime",
+        "apellidos":"Fuentes",
+        "direccion":"Av. Suarez",
+        "telefono": "+6547892354",
+        "email":"jmorenfuei@gmail.com"
+    }
+  ]);
+
   return (
     <div className="table-container">
       <table className="table is-hoverable is-fullwidth">
@@ -15,29 +35,9 @@ const TableCliente = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <button
-                className="button is-small is-info mr-1"
-                title="Modificar"
-              >
-                <span className="icon is-small">
-                  <i className="fas fa-edit"></i>
-                </span>
-              </button>
-              <button className="button is-small is-danger" title="Eliminar">
-                <span className="icon is-small">
-                  <i className="fas fa-trash-alt"></i>
-                </span>
-              </button>
-            </td>
-
-            <td>Jaminton</td>
-            <td>Moreno</td>
-            <td>Calle 50 # 25 - 30</td>
-            <td>+57 321415</td>
-            <td>jmoretfs@gmail.com</td>
-          </tr>
+          {clientesList.map((cliente) => (
+            <RowCliente cliente={cliente} key={cliente.idCliente}/>
+          ))}
         </tbody>
       </table>
     </div>
